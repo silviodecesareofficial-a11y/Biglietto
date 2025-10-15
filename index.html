@@ -82,7 +82,7 @@
       font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #6d5339;
       border: 1px solid rgba(0,0,0,.06);
     }
-    .seal::after { content: "Con Affetto"; }
+    .seal::after { content: "Aprimi"; }
 
     .letter {
       --pad: clamp(16px, 3.2vw, 28px);
@@ -117,6 +117,17 @@
     .hitarea:focus-visible { outline: 3px solid #c6b58f; outline-offset: 4px; }
 
     .footer-note { margin-top: 18px; font-size: 12px; color: #8a8a8a; text-align: center; user-select: none; }
+/* --- Fix per mobile --- */
+.letter { -webkit-overflow-scrolling: touch; }
+
+/* quando la busta è aperta, permetti di scorrere la lettera col dito */
+.opened .hitarea { pointer-events: none; }
+
+/* su schermi piccoli, aumenta leggermente l’altezza della lettera */
+@media (max-width: 600px) {
+  .letter { max-height: 72vh; }
+}
+
   </style>
 </head>
 <body>
