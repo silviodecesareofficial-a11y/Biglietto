@@ -48,14 +48,16 @@
       z-index: 3;
     }
     .envelope__flap-top::before {
-      content: "";
-      position: absolute; left: 50%; top: 0;
-      translate: -50% 0;
-      width: 110%; height: 60%;
-      background: linear-gradient(180deg, #efe9e2 0%, #dcd4ca 100%);
-      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-      border-bottom: 1px solid rgba(0,0,0,.06);
-    }
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  width: 100%;              /* niente più sbordo */
+  height: 62%;              /* regola la profondità della punta */
+  background: linear-gradient(180deg, #efe9e2 0%, #dcd4ca 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);  /* punta verso il basso */
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
 
     .envelope__flap-left, .envelope__flap-right {
       position: absolute; top: 30%; bottom: 0; width: 50%; z-index: 2;
